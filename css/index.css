@@ -1,0 +1,129 @@
+@charset "utf-8";
+@import url(common/reset.css);
+
+@import url(header/header_main.css);
+
+/* @import url(inner_container.css); */
+@import url(main_container/container_sec1.css);
+@import url(main_container/container_sec2.css);
+@import url(main_container/container_sec3.css);
+@import url(main_container/container_sec4.css);
+@import url(main_container/container_sec5.css);
+@import url(main_container/container_sec6.css);
+@import url(main_container/container_sec7.css);
+@import url(main_container/container_sec8.css);
+
+@import url(footer/footer.css);
+
+/* 반응형 */
+/* max-width:1199px (X) */
+/* max-width:991px */
+/* max-width:767px */
+@import url(main_resposive.css) only screen and (max-width:991px);
+
+
+
+#wrap{
+    width:100%;
+    height: auto;
+    border:0px solid #f00;
+
+}
+#scroll-top-button{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 3vw;
+    height: 3vw;
+    border:1px solid #333;
+    background: #fff;
+    transition: all .3s;
+    z-index: 9999;
+    /* opacity: 0;
+    visibility: hidden; */
+
+    /* display: none; */
+}
+#scroll-top-button::after{
+    content: '';
+    width: 0.5vw;
+    height:0.5vw;
+    border: 2px solid #333;
+    border-right: 0;
+    border-bottom: 0;
+    position: absolute;
+    bottom: 1.0vw;
+    left: 1.2vw;
+    transform: translate(-50%, -50%);
+    transform: rotate(45deg);
+    z-index: 9999;
+}
+#scroll-top-button.topActive{
+    /* width: 50px; */
+    opacity: 1;
+    visibility: visible;
+    
+}
+
+
+
+/* section.sec2~sec7 공통 style */
+
+h1.con-title{
+    /* font-size: 3.875rem; */ /*62px*/
+    font-size: 62px;
+    text-align: center;
+    margin: 10.74vh 0 5.4vh;
+}
+
+img.mo-con-img{
+    display: none;
+    /* opacity: 0;
+    visibility: hidden; */
+}
+
+a.con-button{
+    display: block;
+    width: 270px;
+    line-height: 60px;
+    border:1px solid var(--basic-red-color);
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto;
+    color: var(--basic-red-color);
+    transition: all .25s ease-in-out;
+    letter-spacing: -.5px;
+}
+a.con-button:hover{
+    color: #fff;
+    background: var(--basic-red-color);
+}
+
+@media only screen and (max-width:991px) {
+    h1.con-title{
+        /* font-size: 3.875rem; */ /*62px*/
+        /* width:28%;
+        min-width: 260px; */
+        font-size: 1.938rem;
+        line-height: 42px;
+        text-align: center;
+        margin: 7.5vh 0 2vh;
+    }
+
+    img.mo-con-img{
+        display: none;
+        /* opacity: 0;
+        visibility: hidden; */
+    }
+
+    a.con-button{
+        width: 150px;
+        line-height: 37px;
+        font-size: 0.938rem;
+
+    }
+
+}
+

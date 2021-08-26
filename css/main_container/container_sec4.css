@@ -1,0 +1,193 @@
+@charset "utf-8";
+@import url(../common/reset.css);
+
+
+
+:root {
+    --basic-green-color: #96c11f;
+    --basic-red-color: #da1009;
+    --basic-orange-color: #fe8100;
+    --basic-blue-color: #47b3ea;
+    --bg-grey-color: #e6e6e6;
+    --border-grey-color: #f6f6f6;
+    --input-grey-color: #ddd;
+}
+
+
+br.pc-hidden{
+    display: none;
+}
+/* section.sec4 시작 */
+
+.section.sec4{
+    background: #ccc2;
+
+}
+.section.sec4 .sec-con{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+.section.sec4 .sec-con .sec4-slide{
+    display: flex;
+    position: relative;  
+    width: 100%; 
+    height: 644px;
+    border: 0px solid #ccc;
+
+}
+.section.sec4 .sec-con .sec4-slide::after{
+    content :'';
+    background : url(../../img/sec2_frame.png) no-repeat 50% /cover;
+    filter: drop-shadow(0px 8px 8px rgba(24, 24, 24, 0.36));
+    width:320px;
+    height:644px;
+    border: 0px solid;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);   
+    z-index: 10;
+}
+.section.sec4 .sec-con .sec4-slide .slider {
+    position: absolute;
+    top: 50%;
+    left: -2%;
+    transform: translateY(-50%);
+    width: auto;
+    /* width: 400px; */
+    height: 644px;
+    /* box-shadow: 3px 3px 10px rgba(0, 0, 0, .2); */
+    /* display:flex;
+    justify-content: center; */
+    overflow: hidden;
+}
+
+.section.sec4 .sec-con .sec4-slide .slider .wrapper {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+    max-width: 1920px;
+    height: 644px;
+    border: 0px solid #00f;
+    /* background: #b9e1f5; */
+    z-index: 1;
+    left: 50%;
+    top:0%;
+    transform: translatex(-50%); 
+}
+
+.section.sec4 .sec-con .sec4-slide .slider .wrapper .slides {
+    display: flex;
+    position: relative;
+    /* position: absolute; */
+    border: 0px solid #0ff;
+    top: 0;
+    /* width: 100%; */
+    width: 100%;
+
+    height:644px;
+    /* left: -320px; */
+    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%);   
+    /* display: none; */
+
+}
+
+.slides.shifting {
+    transition: left .2s ease-out;
+}
+
+.section.sec4 .sec-con .sec4-slide .slider .wrapper .slides .slide {
+     /* cursor: pointer; */
+    cursor: grab;
+    /* display: none; */
+    padding: 126px 30px 0;
+    width: 320px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all 1s;
+    border: 0px solid #f0f;
+    position: relative;
+    /* background: #FFCF47; */
+    background: #fff;
+    border-radius: 2px;
+    left: 50%;
+    /* transform: translateX(-50%);    */
+}
+.section.sec4 .sec-con .sec4-slide .slider .wrapper .slides .slide .thumbnail-img{
+
+    width: 260px;
+    height:260px;
+    border: 0px solid #f00;
+}
+.control {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50px;
+    margin-top: -20px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.prev,
+.next {
+    background-size: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.prev {
+    background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png);
+    left: 20px;
+}
+
+.next {
+    background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png);
+    right: 20px;
+}
+
+.prev:active,
+.next:active {
+    transform: scale(.8);
+}
+
+.section.sec4 .con-button{
+    margin: 105px 0px 80px;
+}
+
+
+
+/* meaia query */
+/* max-width: 991px */
+@media only screen and (max-width:991px) {
+    br.pc-hidden{
+        display: block;
+    }
+    .section.sec4 .sec-con .sec4-slide::after{
+        content :'';
+        background : url(../../img/sec2_frame.png) no-repeat 50% /cover;
+        width:185px;
+        height:372px;
+        border: 0px solid;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);   
+        z-index: 10;
+    }
+    
+}
+
+/* max-width:767 px */
+@media only screen and (max-width:767px) {
+
+}

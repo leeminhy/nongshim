@@ -1,0 +1,231 @@
+@charset "utf-8";
+@import url(../common/reset.css);
+
+
+
+:root {
+    --basic-green-color: #96c11f;
+    --basic-red-color: #da1009;
+    --basic-orange-color: #fe8100;
+    --basic-blue-color: #47b3ea;
+    --bg-grey-color: #e6e6e6;
+    --border-grey-color: #f6f6f6;
+    --input-grey-color: #ddd;
+}
+
+
+br.pc-hidden{
+    display: none;
+}
+/* section.sec6 시작 */
+
+.container .inner-container .index .sections .section.sec6{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    /* padding: 0 69px; */
+    
+}
+.container .inner-container .index .sections .section.sec6 .sec-con{
+    width: 100%;
+    height: auto;
+    margin: 0 10px;
+
+}
+.container .inner-container .index .sections .section.sec6 .sec-con .sec6-main-brand{
+    width: 100%;
+    height: 720px;
+    background: url(../../img/sec6_main_brand.png) no-repeat 50% /cover;
+    display: flex;
+    align-items: center;
+}
+.container .inner-container .index .sections .section.sec6 .sec-con .sec6-main-brand h1.title-brand{
+    color:#fff;
+    font-size:5vw;
+    font-family: 'Red Hat Display', sans-serif !important;
+    text-indent: 2vw;
+    letter-spacing:-0.05vw;
+}
+
+.container .inner-container .index .sections .section.sec6 .sec-con .product-boxes{
+    /* position: absolute;
+    bottom: 0; */
+    background: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    z-index: 50;
+}
+
+
+.container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul{
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(1,auto);
+    flex-wrap: wrap;
+    padding: 90px 31px 0;
+    /* margin: 0 12.1646%; */
+    column-gap: 20px;
+    margin:0 auto;
+}
+.container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li{
+    text-align: center;
+    word-break: keep-all;
+    font-size: 1.25rem;
+    /* padding:0 30px; */
+}
+.container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li p{
+    /* margin: 30px 0; */
+    display:block;
+    line-height: 45px;
+    font-family: 'Red Hat Display', sans-serif !important;
+    font-size: 0.9em;
+    /* letter-spacing: -1px; */
+    font-weight: 600;
+    color: #212529;
+    word-wrap: keep-all;
+    position: relative;
+}
+.container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li p::after{
+    content: '';
+    border-top: 2px solid var(--basic-red-color);
+    width:100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left:0;
+
+}
+
+.container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li .product-img{
+    width:100%;
+    height:auto;
+    z-index: 10;
+    position: relative;
+    border: 0px solid ;
+    display:flex;
+    justify-content: center;
+    margin: 16px 0;
+}
+.container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li .product-img img{
+    display: block;
+    width: 180px;
+    height: 180px;
+    
+}
+.container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li .product-img::after{
+    content: '';
+    width: 180px;
+    height: 180px;
+    margin: 0px 0;
+    display:block;
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    z-index: -10;
+    border-radius:50%;
+}
+.container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li span{
+    width:85%;
+    display: block;
+    color:#777;
+    font-size: 1.1em;
+    line-height: 36px;
+    letter-spacing:-0.065rem;
+    word-wrap: break-word;
+    text-align: center;
+    margin: 0 auto;
+}
+.container .inner-container .index .sections .section.sec6 .sec-con .product-boxes a.con-button{
+    margin-bottom: 95px;
+}
+
+
+/* meaia query */
+@media only screen and (max-width:991px) {
+    br.pc-hidden{
+        display: block;
+    }
+    .container .inner-container .index .sections .section.sec6 .sec-con{
+        margin-top: 70px;
+    }
+    .container .inner-container .index .sections .section.sec6 .sec-con .sec6-main-brand{
+        height: 360px;
+        background: url(../../img/sec6_main_brand.png) no-repeat 50% /cover;
+        /* display:flex;*/
+        justify-content: center;
+        margin-top: -32.5px;
+    }
+
+    .container .inner-container .index .sections .section.sec6 .sec-con .sec6-main-brand h1.title-brand{
+        width:72.6538%;
+        max-width:991px;
+        /* margin: 0 30% 0 10%; */
+        text-align: left;
+        font-size:48px;
+        text-indent: 0vw;
+    }
+    .container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,auto);
+        justify-content: space-between; 
+        padding: 55px 31px;
+        /* margin: 0 12.1646%; */
+        column-gap: 15vw;
+        row-gap: 5vh;
+    
+    }
+    .container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li{
+        width: 50%;
+        min-width: 146px;
+        /* display: flex;
+        justify-content: center; */
+        margin: 0 auto;
+
+    }
+
+    .container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li{
+        text-align: center;
+        word-break: keep-all;
+        /* padding:0 30px; */
+    }
+    .container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li p{
+        display:inline-block;
+        line-height: 2rem;
+        font-size: 0.875rem;
+        /* letter-spacing: -1px; */
+
+    }
+    .container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li .product-img img{
+        width: 120px;
+        height: 120px;
+    }
+    .container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li .product-img::after{
+        width: 120px;
+        height: 120px;
+    }
+
+
+    .container .inner-container .index .sections .section.sec6 .sec-con .product-boxes>ul>li span{
+        font-size: 0.926rem;
+        line-height: 1.375rem;
+        text-align: center;
+        letter-spacing:-0.065rem;
+    }
+}
+.container .inner-container .index .sections .section.sec6 .sec-con .product-boxes a.con-button{
+    margin-bottom: 55px;
+}
+/* max-width:767 px */
+@media only screen and (max-width:767px) {
+
+
+
+}

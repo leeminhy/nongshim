@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>농심 포폴 로그인</title>
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/login.js"defer></script>
+</head>
+<body>
+    <!-- login -->
+    <div class="header">
+        <div class="inner-header">
+            <div class="nav">
+                <div id="homeBtn"><a href="../index.html"><img src="../img/home-arrow.png" alt="이전페이지"/></a></div>
+                <h1 class="logo"><a href="../index.html"><img src="../img/nongshim_horizon_b.svg" alt="mainlogo"></a></h1>
+                <div class="homeBtn hidden"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="inner-container">
+            <div class="index">
+                <div class="title">
+                    <div class="circle"></div>
+                    <h1 class="title">농심 통합 로그인</h1>
+                </div>
+                    <!-- login form 시작-->
+                <div class="fieldset">
+                    <div class="login-form">
+                        <form action="loginOk.do" method="post" id="loginOK">
+                            <input type="text" name="userId" id="userId" placeholder="아이디 : 영문, 숫자 조합 4~12자">
+                            <input type="password" name="userPw" id="userPw" placeholder="비밀번호 : 영문, 숫자, 특수문자 조합 8~16자">
+                            <input type="checkbox" name="saveUserId" id="saveUserId">
+                                <div class="idSave">아이디 저장</div>
+                            <input type="button" value="로그인" id="loginOkBtn">
+                        </form>
+                    </div>
+                        <div class="account-utils">
+                            <ul>
+                                <li><a href="#">아이디 찾기</a></li>
+                                <li><a href="#">비밀번호 찾기</a></li>
+                                <li><a href="join.html">회원가입</a></li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="sns-account">
+                    <p class="title">SNS 계정으로 로그인</p>
+                    <ul>
+                        <li><a href="#"><img src="../img/login/btn-naver.png" alt="naver-login"></a></li>
+                        <li><a href="#"><img src="../img/login/btn-kakao.png" alt="kakao-login"></a></li>
+                        <li><a href="#"><img src="../img/login/btn-facebook.png" alt="facebook-login"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="inner-footer">
+            <div class="footer-con">
+                <p class="copyright">ⓒ NONGSHIM CO.,LTD. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+@charset "utf-8";
+@import url(../common/reset.css);
+
+
+:root {
+    --basic-green-color: #96c11f;
+    --basic-red-color: #da1009;
+    --basic-orange-color: #fe8100;
+    --basic-blue-color: #47b3ea;
+    --bg-grey-color: #e6e6e6;
+    --border-grey-color: #f6f6f6;
+    --input-grey-color: #ddd;
+}
+
+
+/* section.sec8 시작 */
+
+.container .inner-container .index .sections .section.sec8{
+    width: 100%;
+    height: auto;
+    background: #555;
+    display: flex;
+    justify-content: center;
+}
+.container .inner-container .index .sections .section.sec8 .sec-con{
+    width: 100%;
+    /* max-width: 1200px; */
+    border: 1px solid;
+}
+.container .inner-container .index .sections .section.sec8 .sec-con>ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .inner-container .index .sections .section.sec8 .sec-con>ul>li{
+    width: 33.3333%;
+    height: 290px;
+    padding: 0 4% 2%;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.container .inner-container .index .sections .section.sec8 .sec-con>ul>li a{
+    color:#aaa;
+    display: block;
+    text-align: center;
+    word-wrap: keep-all;
+}
+/* .container .inner-container .index .sections .section.sec8 .sec-con>ul>li:nth-child(3){
+    width: 33.3333%;
+    border-right: 0px solid #fff;
+} */
+.container .inner-container .index .sections .section.sec8 .sec-con>ul>li:nth-child(2){
+    border-left:1px solid rgba(124, 124, 124, 0.9);
+    border-right:1px solid rgba(124, 124, 124, 0.9);
+}
+.container .inner-container .index .sections .section.sec8 .sec-con>ul>li p{
+    font-family: 'Red Hat Display', sans-serif !important;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.125rem
+}
+
+.container .inner-container .index .sections .section.sec8 .sec-con>ul>li .icon{
+    width: 100%;
+    height:40px;
+    margin:0 auto;
+    position: relative;
+    margin:40px 0;
+    display:flex;
+    justify-content: center;
+}
+.container .inner-container .index .sections .section.sec8 .sec-con>ul>li .icon img{
+    display: block;
+    width:40px;
+    height:auto;
+}
+.container .inner-container .index .sections .section.sec8 .sec-con>ul>li .icon::before {
+    content: '';
+    width:90px;
+    height:90px;
+    background: #3c3c3c;
+    opacity: 0.49;
+    border-radius: 50%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+
+@media only screen and (max-width:991px) {
+    .container .inner-container .index .sections .section.sec8 .sec-con{
+        padding:0 49px;
+    }
+    .container .inner-container .index .sections .section.sec8 .sec-con>ul{
+        flex-direction: column;
+        flex-wrap: wrap;
+        height:auto;
+        padding: 0% 10%;
+    }
+    .container .inner-container .index .sections .section.sec8 .sec-con>ul>li{
+        width: 100%;
+        height:125px;
+        display:flex;
+        justify-content:space-between;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 0;
+    }
+    .container .inner-container .index .sections .section.sec8 .sec-con>ul>li:nth-child(2){
+        border-left:0px solid rgba(124, 124, 124, 0.9);
+        border-right:0px solid rgba(124, 124, 124, 0.9);
+        border-top:1px solid rgba(124, 124, 124, 0.9);
+        border-bottom:1px solid rgba(124, 124, 124, 0.9);
+    }
+    .container .inner-container .index .sections .section.sec8 .sec-con>ul>li a{
+        color:#aaa;
+        width:100%;
+        display: block;
+        text-align: left;
+        word-wrap: keep-all;
+        align-items: left;    
+    }
+    .container .inner-container .index .sections .section.sec8 .sec-con>ul>li .icon{
+        width:0%;
+    }
+    .container .inner-container .index .sections .section.sec8 .sec-con>ul>li .con-txt{
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        margin-left: 20px;
+    }
+    .container .inner-container .index .sections .section.sec8 .sec-con>ul>li .con-txt span{
+        display: inline-block;
+        width: 100%;
+    }
+    .container .inner-container .index .sections .section.sec8 .sec-con>ul>li .icon{
+        width: auto;
+        height:25px;
+        margin:0 auto;
+        position: relative;
+        display:flex;
+        justify-content: center;
+    }
+    .container .inner-container .index .sections .section.sec8 .sec-con>ul>li .icon img{
+        display: block;
+        width:25px;
+        height:auto;
+    }
+    .container .inner-container .index .sections .section.sec8 .sec-con>ul>li .icon::before {
+        content: '';
+        width:50px;
+        height:50px;
+        background: #3c3c3c;
+        opacity: 0.49;
+        border-radius: 50%;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+    
+}
