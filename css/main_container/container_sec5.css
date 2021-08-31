@@ -70,7 +70,7 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(2,190px);
-    padding-top: 90px;
+    padding: 90px 50px 0;
     /* margin: 0 12.1646%; */
     column-gap: 4.8vw;
     margin:0 15px 60px;
@@ -78,6 +78,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,50%);
+    margin: 0 auto;
 }
 .container .inner-container .index .sections .section.sec5 .sec-con .info-boxes>ul>li{
     text-align: center;
