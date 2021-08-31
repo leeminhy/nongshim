@@ -16,9 +16,9 @@
 }
 
 
-/* .rwd-header{
+.responsive-header{
     display: none;
-} */
+}
 /* header 시작 */
 .header{
     width: 100%;
@@ -639,7 +639,7 @@ ul.sub-item ul.sub-3depth>li{
 }
 
 
-.new{
+.header .new{
     text-indent: 25px;
     position: relative;
 }

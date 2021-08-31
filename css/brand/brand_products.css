@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import url(../common/reset.css);
-@import url(../header/header-brand-main.css);
-@import url(../footer/brand-main-footer.css);
+@import url(../header/header_brand_main.css);
+@import url(../footer/brand_main_footer.css);
 /* @import url(../ns_main_rwd.css) only screen and (max-width:991px); */
 @import url(../header/header_reposive_brand.css) only screen and (max-width:991px);
 

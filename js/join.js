@@ -1,5 +1,32 @@
 'use strict';
 
+
+const modalTermsBtn = document.querySelectorAll('.modal-terms-button');
+const modalTermsBoxes = document.querySelectorAll('.terms-section-infobox');
+const closeBtn = document.querySelectorAll('.close');
+
+modalTermsBtn.forEach((el,idx)=>{
+        el.addEventListener('click', function (e) {
+            // modalTermsBoxes.for
+            console.log(e.target)
+            console.log(idx)
+            modalTermsBoxes.forEach((el,idx2)=>{
+                if(idx==idx2){
+                    modalTermsBoxes[idx2].style.display="block";
+                    closeBtn[idx2].style.display="block";
+                }
+        })
+    })
+})
+closeBtn.forEach((el,idx)=>{
+    el.addEventListener('click', function (e) {
+         modalTermsBoxes[idx].style.display="none";
+         closeBtn[idx].style.display="none";
+    })
+})
+
+
+// form 유효성 검사
 const joinForm = document.querySelector('form');
 const userPhoneAuth = document.querySelector('#phoneAuth');
 const userPhoneInput = document.querySelectorAll('.phone2');

@@ -25,12 +25,12 @@ br.pc-hidden{
     display: flex;
     justify-content: center;
     /* padding: 0 69px; */
+    /* margin: 0 10px; */
     
 }
 .container .inner-container .index .sections .section.sec6 .sec-con{
     width: 100%;
     height: auto;
-    margin: 0 10px;
 
 }
 .container .inner-container .index .sections .section.sec6 .sec-con .sec6-main-brand{
@@ -68,7 +68,7 @@ br.pc-hidden{
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(1,auto);
     flex-wrap: wrap;
-    padding: 90px 31px 0;
+    padding: 90px 31px 85px;
     /* margin: 0 12.1646%; */
     column-gap: 20px;
     margin:0 auto;

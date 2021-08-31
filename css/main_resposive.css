@@ -47,7 +47,7 @@
         display:flex;
         justify-content: flex-start;  
         padding: 13px 20px; 
-
+        cursor: pointer;
     }
     .responsive-header .res-inner-header .res-menu span.menu{
         display: block;
@@ -212,7 +212,7 @@
         max-width: 650px;
         height: auto;
         display: flex;
-        /* flex-direction: column; */
+        flex-direction: column;
         justify-content: center;
         /* flex: 1; */
         border:0px solid #00f;
@@ -232,8 +232,8 @@
         
     }
     .res-nav .bottom-header .gnb>ul>li{
-        padding: 27px 0 20px;
-        border-top: 1px solid #ccc;
+        padding: 0px 0;
+        /* border-top: 1px solid #ccc; */
     }   
     .res-nav .bottom-header .gnb>ul .all{
         width: 100%;

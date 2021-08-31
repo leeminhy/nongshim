@@ -55,6 +55,7 @@
         height: auto;
         border:0px solid #f00;
         margin-left: 20px;
+        cursor: pointer;
     }
     .rwd-header .rwd-inner-header .rwd-menu span.menu.nav{
         width: 23px;

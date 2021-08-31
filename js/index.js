@@ -1,6 +1,7 @@
 'use strict';
 
 
+
 //scrollTop button
 const scrollTopBtn = document.querySelector('#scroll-top-button');
 window.scroll(function(){
@@ -21,6 +22,12 @@ scrollTopBtn.addEventListener('click',function(e){
     const topHeader = document.querySelector(".top-header");
     const bottomHeader = document.querySelector(".bottom-header");
     const headerHeight = header.clientHeight;
+
+    const gnbUl = document.querySelector('.gnb>ul');
+    const gnbUlLi = document.querySelectorAll('.gnb>ul>li');
+    const gnbUlLiA = document.querySelectorAll('.gnb>ul>li>a');
+    const gnbWhiteBg = document.querySelector('.nav_white_bg');
+    const NLIVE = document.querySelector('.N-LIVE');
     // const headerHeight = 
     
 //sec2로 이통하는 스크롤 버튼
@@ -36,22 +43,35 @@ const sec2MoveBtn = document.querySelector('.scrollBtn')
 //    header
 //스크롤 내리면 헤더 숨겨지고
 //도중 스크롤을 올렸을 때 nav만 출력된다
-    let prevScrollpos = window.pageYOffset;
+var prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
-        let currentScrollPos = window.pageYOffset + (200 + 'px');
-        if (prevScrollpos + 100 > currentScrollPos) {
-            document.querySelector(".header").style.top = "0px";
-            document.querySelector(".header").style.transition = "all 0.35s";
-        } else {
-            document.querySelector(".header").style.top = "-122px";
-        }
-        prevScrollpos = currentScrollPos;
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos || currentScrollPos <= 100) {
+        header.style.top = '0';
+        header.style.transition = "all 0.35s";
+    } else if (prevScrollpos < currentScrollPos) {
+        header.style.top = '-45px';
+        // header.style.backgroundColor = "#fff";
+        document.querySelector("h1.logo>a").style.backgroundImage = "url('img/nongshim_horizon_b.svg')";
+    
+    } else {
+        header.style.top = '-122px';
     }
+    prevScrollpos = currentScrollPos;
+    }
+    // let prevScrollpos = window.pageYOffset;
+    // window.onscroll = function () {
+    //     let currentScrollPos = window.pageYOffset + (200 + 'px');
+    //     if (prevScrollpos + 100 > currentScrollPos) {
+    //         document.querySelector(".header").style.top = "0px";
+    //         document.querySelector(".header").style.transition = "all 0.35s";
+    //     } else {
+    //         document.querySelector(".header").style.top = "-122px";
+    //     }
+    //     prevScrollpos = currentScrollPos;
+    // }
 
-const gnbUl = document.querySelector('.gnb>ul');
-const gnbUlLi = document.querySelectorAll('.gnb>ul>li');
-const gnbWhiteBg = document.querySelector('.nav_white_bg');
-const NLIVE =document.querySelector('.N-LIVE');
+
 
 // NLIVE.addEventListener('mousemove', function(event){
 //     gnbWhiteBg.classList.remove('whiteBgOn');
@@ -84,25 +104,24 @@ closeBtn2.addEventListener('click',function(event){
 const goTo = document.querySelector('.goTo>ul')
 const goToSubs = document.querySelectorAll('li.goTo-sub')
 const goToMenu = document.querySelectorAll('li.goTo-sub>ul')
+const goToMenuLi = document.querySelectorAll('li.goTo-sub>ul>li')
 
 
-goTo.addEventListener('mouseout',function(event){
+goTo.addEventListener('mouseover', function (event) {
     let _target = event.target;
-        goToSubs.forEach((el,idx)=>{
-            if(_target==el){
-                console.log('_target')
-                goToMenu.forEach((el2,idx2)=>{
-                    if(idx==idx2){
-                        console.log('menuOn')
-                        el2.classList.remove('menuOn')
-                    } 
-                    else {
-                        el2.classList.remove('menuOn')
-                    }
-                });
-            }
-            
-        });
+    goToSubs.forEach((el, idx) => {
+        if (_target == el) {
+            console.log('_target')
+            goToMenu.forEach((el2, idx2) => {
+                if (idx == idx2) {
+                    console.log('menuOn')
+                    el2.classList.add('menuOn')
+                } else {
+                    el2.classList.remove('menuOn')
+                }
+            });
+        }
+    });
 });
     goToMenu.forEach((el) => {
         el.addEventListener('mouseout', function (event) {
@@ -115,7 +134,9 @@ goTo.addEventListener('mouseout',function(event){
 
 ////////////////////////////////
 //   container
-//sec1 gallery
+//sec1
+
+//gallery
 const gallery = document.querySelector('.gallery')
 const galleryUl = document.querySelector('.gallery>ul')
 const galleryUlLi = document.querySelectorAll('.gallery>ul>li')
@@ -237,6 +258,23 @@ itemsUlLi.forEach((el,idx)=>{
 
 
 //section.sec2 banner
+
+//반응형 resize
+function sec2ResizeApply() {
+    let minWidth = 1106;
+    let section2Con = document.querySelector('.section.sec2>.sec-con');
+    if (window.innerWidth < minWidth) {
+        section2Con.style.zoom = (window.innerWidth / minWidth);
+    } else section2Con.style.zoom = 1;
+}
+window.onload = function () {
+    window.addEventListener('resize', function () {
+        sec2ResizeApply();
+    });
+}
+sec2ResizeApply();
+
+
 const sec2Con = document.querySelector('.section.sec2>.sec-con')
 const sec2SlideUl = document.querySelector('ul.slide_items_list')
 const sec2SlideLi = document.querySelectorAll('li.slide_item');
@@ -246,8 +284,8 @@ const nextBtn = document.querySelector(".next");
 
 let currentIdx = 0,
     slideCount = sec2SlideLi.length,
-    slideWidth = sec2SlideLi[0].offsetWidth,
-    slideMargin = 50;
+    slideWidth = sec2SlideLi[0].offsetWidth
+    // slideMargin = 50;
 
 
     // for(let i = 0; i <= slideCount; i++){
@@ -285,18 +323,18 @@ function updateWidth(){
     let currentSlides = document.querySelectorAll('li.slide_item');
     let newSlideCount = currentSlides.length;
     //ul width
-    let newWidth = (slideWidth + slideMargin) * newSlideCount - slideMargin + 'px';
+    let newWidth = (slideWidth) * newSlideCount + 'px';
     sec2SlideUl.style.width = newWidth;
 };
 
 //prev시 초기위치를 잡는 콜백함수
 function setInitialPos(){
-    let initialTranslateValue = -(slideWidth + slideMargin) * slideCount;
+    let initialTranslateValue = -(slideWidth) * slideCount;
     sec2SlideUl.style.transform = 'translateX(' + initialTranslateValue+'px)';
 };
 
     //ul width
-    sec2SlideUl.style.width= (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
+    sec2SlideUl.style.width= (slideWidth) * slideCount + 'px';
 
     //slide controls
     nextBtn.addEventListener('click', function(){
@@ -308,7 +346,7 @@ function setInitialPos(){
 
     //loop slide
 function moveSlide(num){
-    sec2SlideUl.style.left = -num * (slideWidth + slideMargin) + 'px';
+    sec2SlideUl.style.left = -num * slideWidth + 'px';
     currentIdx = num;
     console.log(currentIdx, slideCount);
 
@@ -329,166 +367,183 @@ function moveSlide(num){
 
 //section.sec4 slide
 
+//반응형 resize
+function sec4ResizeApply() {
+    let minWidth = 990;
+    let section4Con = document.querySelector('.sec4-slide');
+    if (window.innerWidth < minWidth) {
+        section4Con.style.zoom = (window.innerWidth / minWidth);
+    } else section4Con.style.zoom = 1;
+}
+window.onload = function () {
+    window.addEventListener('resize', function () {
+        sec4ResizeApply();
+    });
+}
+sec4ResizeApply();
+
 //sec4 배경이미지
-// const sec4Slide = document.querySelector('.sec4-slide')
-// const thumbnailImg = sec4Slide.querySelectorAll('.thumbnail-img');
-// const BgArr=[];
+const sec4Slide = document.querySelector('.sec4-slide')
+const thumbnailImg = sec4Slide.querySelectorAll('.thumbnail-img');
+const BgArr=[];
 
-// for(let i=0; i<thumbnailImg.length; i++){
-//     BgArr.push(`url(img/sec4_${i}.jpg) no-repeat 50% /cover`);
-//     thumbnailImg[i].style.background=BgArr[i];
-// }
+for(let i=0; i<thumbnailImg.length; i++){
+    BgArr.push(`url(img/sec2/sec2_${i}.jpg) no-repeat 50% /cover`);
+    thumbnailImg[i].style.background=BgArr[i];
+}
 
-// //슬라이드 구현하기
-// //동작 정의
-// //1. 슬라이드 이동은 마우스, 터치 및 클릭 상호 작용으로 가능해야 한다
-// //2. 변속은 앞뒤로
+//슬라이드 구현하기
+//동작 정의
+//1. 슬라이드 이동은 마우스, 터치 및 클릭 상호 작용으로 가능해야 한다
+//2. 변속은 앞뒤로
 
-// //초기화
-// var slider = document.getElementById('slider'),
-//     sliderItems = document.getElementById('slides'),
-//     prev = document.querySelector('.control.prev'),
-//     next = document.querySelector('.control.next');
+//초기화
+var slider = document.getElementById('slider'),
+    sliderItems = document.getElementById('slides'),
+    prev = document.querySelector('.control.prev'),
+    next = document.querySelector('.control.next');
 
-// //원하는 요소로 슬라이더를 초기화하는 함수를 선언하고 호출하기
-// slide(slider, sliderItems, prev, next);
+//원하는 요소로 슬라이더를 초기화하는 함수를 선언하고 호출하기
+slide(slider, sliderItems, prev, next);
 
-// //호출함수
-// function slide(wrapper, items, prev, next) {
-//     //함수에 필요한 변수 선언
-//     var posX1 = 0,
-//         posX2 = 0,
-//         posInitial,
-//         posFinal,
-//         threshold = 100,
-//         slides = items.getElementsByClassName('slide'),
-//         slidesLength = slides.length,
-//         slideSize = items.getElementsByClassName('slide')[0].offsetWidth,
-//         firstSlide = slides[0],
-//         lastSlide = slides[slidesLength - 1],
-//         cloneFirst = firstSlide.cloneNode(true),
-//         cloneLast = lastSlide.cloneNode(true),
-//         index = 0,
-//         allowShift = true;
 
-//     // 가장 첫 번째와 마지막 슬라이드 복제
-//     // 첫 번째 슬라이드에서 뒤로 슬라이드하면 마지막 슬라이드를 보고 
-//     // 마지막 슬라이드에서 앞으로 슬라이드하면 첫 번째 슬라이드
-//     items.appendChild(cloneFirst);
-//     items.insertBefore(cloneLast, firstSlide);
-//     //모두 렌더링되면 슬라이드 목록에 클래스를 추가
-//     wrapper.classList.add('loaded');
 
-//     //이벤트 정의
-//     //마우스/터치 상호 작용이 시작, 발생 및 종료되는 이벤트 설정
-//     //마우스 이벤트
-//     items.onmousedown = dragStart;
+//호출함수
+function slide(wrapper, items, prev, next) {
+    //함수에 필요한 변수 선언
+    var posX1 = 0,
+        posX2 = 0,
+        posInitial,
+        posFinal,
+        threshold = 100,
+        slides = items.getElementsByClassName('slide'),
+        slidesLength = slides.length,
+        slideSize = items.getElementsByClassName('slide')[0].offsetWidth,
+        firstSlide = slides[0],
+        lastSlide = slides[slidesLength - 1],
+        cloneFirst = firstSlide.cloneNode(true),
+        cloneLast = lastSlide.cloneNode(true),
+        index = 0,
+        allowShift = true;
 
-//     // 터치 이벤트
-//     items.addEventListener('touchstart', dragStart);
-//     items.addEventListener('touchend', dragEnd);
-//     items.addEventListener('touchmove', dragAction);
+    // 가장 첫 번째와 마지막 슬라이드 복제
+    // 첫 번째 슬라이드에서 뒤로 슬라이드하면 마지막 슬라이드를 보고 
+    // 마지막 슬라이드에서 앞으로 슬라이드하면 첫 번째 슬라이드
+    items.appendChild(cloneFirst);
+    items.insertBefore(cloneLast, firstSlide);
+    //모두 렌더링되면 슬라이드 목록에 클래스를 추가
+    wrapper.classList.add('loaded');
 
-//     // 클릭 이벤트
-//     prev.addEventListener('click', function () {
-//         shiftSlide(-1)
-//     });
-//     next.addEventListener('click', function () {
-//         shiftSlide(1)
-//     });
+    //이벤트 정의
+    //마우스/터치 상호 작용이 시작, 발생 및 종료되는 이벤트 설정
+    //마우스 이벤트
+    items.onmousedown = dragStart;
 
-//     // Transition events
-//     items.addEventListener('transitionend', checkIndex);
+    // 터치 이벤트
+    items.addEventListener('touchstart', dragStart);
+    items.addEventListener('touchend', dragEnd);
+    items.addEventListener('touchmove', dragAction);
 
-//     //onmousedown, touchend
+    // 클릭 이벤트
+    // prev.addEventListener('click', function () {
+    //     shiftSlide(-1)
+    // });
+    // next.addEventListener('click', function () {
+    //     shiftSlide(1)
+    // });
+
+    // Transition events
+    items.addEventListener('transitionend', checkIndex);
+
+    //onmousedown, touchend
     
-//     //드래그, 슬라이딩, 이동이 시작된 곳
-//     //초기 위치는 현재 항목 offset, 이벤트 유형에 따라 첫 번째 X 위치 설정
-//     function dragStart(e) {
-//         e = e || window.event;
-//         e.preventDefault();
-//         posInitial = items.offsetLeft;
-//         console.log(`posInitial: ${posInitial}`);
+    //드래그, 슬라이딩, 이동이 시작된 곳
+    //초기 위치는 현재 항목 offset, 이벤트 유형에 따라 첫 번째 X 위치 설정
+    function dragStart(e) {
+        e = e || window.event;
+        e.preventDefault();
+        posInitial = items.offsetLeft;
+        console.log(`posInitial: ${posInitial}`);
 
 
-//         if (e.type == 'touchstart') {
-//             posX1 = e.touches[0].clientX;
-//         } else {
-//             posX1 = e.clientX;
-//             console.log(`e.clientX: ${e.clientX}`);
-//             document.onmouseup = dragEnd;
-//             document.onmousemove = dragAction;
-//         }
-//     }
+        if (e.type == 'touchstart') {
+            posX1 = e.touches[0].clientX;
+        } else {
+            posX1 = e.clientX;
+            console.log(`e.clientX: ${e.clientX}`);
+            document.onmouseup = dragEnd;
+            document.onmousemove = dragAction;
+        }
+    }
 
-//     function dragAction(e) {
-//         e = e || window.event;
+    function dragAction(e) {
+        e = e || window.event;
 
-//         if (e.type == 'touchmove') {
-//             posX2 = posX1 - e.touches[0].clientX;
-//             posX1 = e.touches[0].clientX;
-//         } else {
-//             posX2 = posX1 - e.clientX;
-//             posX1 = e.clientX;
-//         }
-//         items.style.left = (items.offsetLeft - posX2) + "px";
-//     }
+        if (e.type == 'touchmove') {
+            posX2 = posX1 - e.touches[0].clientX;
+            posX1 = e.touches[0].clientX;
+        } else {
+            posX2 = posX1 - e.clientX;
+            posX1 = e.clientX;
+        }
+        items.style.left = (items.offsetLeft - posX2) + "px";
+    }
 
-//     // touchend 및 mouseup 이벤트
-//     // 비교해야 할 항목의 초기 및 최종 위치가 div에 사이의 차이를 함께 임계 값 
-//     function dragEnd(e) {
-//         posFinal = items.offsetLeft;
-//         console.log(`posFinal: ${posFinal}`);
-//         console.log(`posInitial: ${posInitial}`);
+    // touchend 및 mouseup 이벤트
+    // 비교해야 할 항목의 초기 및 최종 위치가 div에 사이의 차이를 함께 임계 값 
+    function dragEnd(e) {
+        posFinal = items.offsetLeft;
+        console.log(`posFinal: ${posFinal}`);
+        console.log(`posInitial: ${posInitial}`);
 
-//         if (posFinal - posInitial < -threshold) {
-//             shiftSlide(1, 'drag');
-//         } else if (posFinal - posInitial > threshold) {
-//             shiftSlide(-1, 'drag');
-//         } else {
-//             items.style.left = (posInitial) + "px";
-//         }
+        if (posFinal - posInitial < -threshold) {
+            shiftSlide(1, 'drag');
+        } else if (posFinal - posInitial > threshold) {
+            shiftSlide(-1, 'drag');
+        } else {
+            items.style.left = (posInitial) + "px";
+        }
 
-//         document.onmouseup = null;
-//         document.onmousemove = null;
-//     }
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
 
-//     function shiftSlide(dir, action) {
-//         items.classList.add('shifting');
+    function shiftSlide(dir, action) {
+        items.classList.add('shifting');
 
-//         if (allowShift) {
-//             if (!action) {
-//                 posInitial = items.offsetLeft;
-//             }
+        if (allowShift) {
+            if (!action) {
+                posInitial = items.offsetLeft;
+            }
 
-//             if (dir == 1) {
-//                 items.style.left = (posInitial - slideSize) + "px";
-//                 index++;
-//             } else if (dir == -1) {
-//                 items.style.left = (posInitial + slideSize) + "px";
-//                 index--;
-//             }
-//         };
+            if (dir == 1) {
+                items.style.left = (posInitial - slideSize) + "px";
+                index++;
+            } else if (dir == -1) {
+                items.style.left = (posInitial + slideSize) + "px";
+                index--;
+            }
+        };
 
-//         allowShift = false;
-//     }
+        allowShift = false;
+    }
 
-//     function checkIndex() {
-//         items.classList.remove('shifting');
+    function checkIndex() {
+        items.classList.remove('shifting');
 
-//         if (index == -1) {
-//             items.style.left = -(slidesLength * slideSize) + "px";
-//             index = slidesLength - 1;
-//         }
+        if (index == -2) {
+            items.style.left = -(slidesLength * slideSize) - 160 + "px";
+            index = slidesLength - 2;
+        }
 
-//         if (index == slidesLength) {
-//             items.style.left = -(1 * slideSize) + "px";
-//             index = 0;
-//         }
+        if (index == slidesLength-1) {
+            items.style.left = -(slideSize*2) + 160 + "px";
+            index = 1;
+        }
 
-//         allowShift = true;
-//     }
-// }
+        allowShift = true;
+    }
+}
 
 
 

@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-    <link rel="shortcut icon" href="../img/faviconb.ico">
-    <link rel="stylesheet" href="../css/common/reset.css">
+    <link rel="shortcut icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/join.css">
+    <link rel="stylesheet" href="../css/join_responsive.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../js/join.js"defer></script>
 </head>
@@ -190,7 +190,7 @@
                                             <div class="form-inputs section sec3">
                                                 <ul class="form-inputs">
                                                     <li>
-                                                        <p>선택 입력사항으로 상품, 당첨경품 등의 배송정보로 사용됩니다.
+                                                        <p>선택 입력사항으로 상품, 당첨경품 등의 배송정보로 사용됩니다.<br class="mobile-hidden">
                                                             배송정보 유/무에 따라 이벤트 당첨이 사전예고없이 취소될 수 있으니 이벤트 참여 시 유의하시기 바랍니다.
                                                         </p>
                                                     </li>
@@ -240,16 +240,18 @@
                                     <div class="form-inputs section sec4">
                                         <ul class="form-inputs">
                                             <li class="terms-info notice">
-                                                <p>각 항목에 대한 약관을 충분히 읽어보시고, 약관에 동의해 주시기 바랍니다.</p>
+                                                <p class="notice">각 항목에 대한 약관을 충분히 읽어보시고, 약관에 동의해 주시기 바랍니다.</p>
                                                 <input type="checkbox" name="termsAgreeAll" id="termsAgreeAll">
-                                                <span>농심 회원약관, 개인정보 수집 및 이용에 모두 동의합니다.</span>
+                                                <span class="agree-checkbox-text">농심 회원약관, 개인정보 수집 및 이용에 모두 동의합니다.</span>
                                             </li>
                                             <li>
                                                 <div class="terms-info section one">
                                                     <ul>
                                                         <li>
-                                                            <h1 class="terms-sub-title">농심 회원 약관</h1>
-                                                            <div class="terms-section-box">
+                                                            <h1 class="terms-sub-title">농심 회원 약관
+                                                                <span class="close pc-hidden">닫기</span>
+                                                                <span class="modal-terms-button pc-hidden">전문보기</span></h1>
+                                                            <div class="terms-section-infobox">
                                                                 <ul>
                                                                     <li>
                                                                         제1조 (목적)<br>
@@ -333,10 +335,16 @@
                                                                 </ul>
                                                             </div>
                                                             <div class="terms-section-checkbox">
-                                                                <input type="radio" name="agree01" class="agree01"
-                                                                    value="agree01"><span>농심 회원 약관에 동의합니다.</span>
-                                                                <input type="radio" name="agree01" class="agree01"
-                                                                    value="disagree01" checked><span>동의하지 않습니다.</span>
+                                                                <div class="agree-radio-box">
+                                                                    <input type="radio" name="agree01" class="agree01"
+                                                                        value="agree01"><span
+                                                                        class="agree-radio-text">농심 회원 약관에 동의합니다.</span>
+                                                                </div>
+                                                                <div class="agree-radio-box">
+                                                                    <input type="radio" name="agree01" class="agree01"
+                                                                        value="disagree01" checked><span
+                                                                        class="agree-radio-text">동의하지 않습니다.</span>
+                                                                </div>
                                                             </div>
                                                             <div class="section-terms-info"></div>
                                                         </li>
@@ -348,8 +356,11 @@
                                                     <h1 class="terms-section-title">농심 개인정보 수집 및 이용에 대한 안내</h1>
                                                     <ul>
                                                         <li>
-                                                            <h1 class="terms-sub-title">개인정보 수집 및 이용 (필수)</h1>
-                                                            <div class="terms-section-box">
+                                                            <h1 class="terms-sub-title">개인정보 수집 및 이용 (필수)
+                                                                <span class="modal-terms-button pc-hidden">전문보기</span>
+                                                                <span class="close pc-hidden">닫기</span>
+                                                            </h1>
+                                                            <div class="terms-section-infobox">
                                                                 <p>
                                                                     ipsum dolor sit amet consectetur, adipisicing elit.
                                                                     Dignissimos, quibusdam dolore magni voluptas ullam
@@ -371,11 +382,17 @@
                                                                 </p>
                                                             </div>
                                                             <div class="terms-section-checkbox">
-                                                                <input type="radio" name="agree02" class=""
-                                                                    value="agree02"><span>개인정보 수집 및 보유, 이용기간에
-                                                                    동의합니다.</span>
-                                                                <input type="radio" name="agree02" class=""
-                                                                    value="disagree02" checked><span>동의하지 않습니다.</span>
+                                                                <div class="agree-radio-box">
+                                                                    <input type="radio" name="agree02" class=""
+                                                                        value="agree02"><span
+                                                                        class="agree-radio-text">개인정보 수집 및 보유, 이용기간에
+                                                                        동의합니다.</span>
+                                                                </div>
+                                                                <div class="agree-radio-box">
+                                                                    <input type="radio" name="agree02" class=""
+                                                                        value="disagree02" checked><span
+                                                                        class="agree-radio-text">동의하지 않습니다.</span>
+                                                                </div>
                                                             </div>
                                                             <div class="terms-section-info">
                                                                 <p>필수 개인정보 수집에 대해 동의를 거부하실 수 있으며, 거부하실 경우에는 회원가입이 어려울 수
@@ -383,8 +400,11 @@
                                                             </div>
                                                         </li>
                                                         <li>
-                                                            <h1 class="terms-sub-title">개인정보 취급위탁 안내 (필수)</h1>
-                                                            <div class="terms-section-box">
+                                                            <h1 class="terms-sub-title">개인정보 취급위탁 안내 (필수)
+                                                                <span class="modal-terms-button pc-hidden">전문보기</span>
+                                                                <span class="close pc-hidden">닫기  </span>
+                                                            </h1>
+                                                            <div class="terms-section-infobox">
                                                                 <p>
                                                                     ipsum dolor sit amet consectetur, adipisicing elit.
                                                                     Dignissimos, quibusdam dolore magni voluptas ullam
@@ -406,10 +426,17 @@
                                                                 </p>
                                                             </div>
                                                             <div class="terms-section-checkbox">
-                                                                <input type="radio" name="agree03" class=""
-                                                                    value="agree03"><span>개인정보 취급 위탁에 동의합니다.</span>
-                                                                <input type="radio" name="agree03" class=""
-                                                                    value="disagree03" checked><span>동의하지 않습니다.</span>
+                                                                <div class="agree-radio-box">
+                                                                    <input type="radio" name="agree03" class=""
+                                                                        value="agree03"><span
+                                                                        class="agree-radio-text">개인정보 취급 위탁에
+                                                                        동의합니다.</span>
+                                                                </div>
+                                                                <div class="agree-radio-box">        
+                                                                    <input type="radio" name="agree03" class=""
+                                                                        value="disagree03" checked><span
+                                                                        class="agree-radio-text">동의하지 않습니다.</span>
+                                                                </div>
                                                             </div>
                                                             <div class="terms-section-info">
                                                                 <p>개인정보 취급위탁에 대해 동의를 거부하실 수 있으며, 거부하실 경우에는 회원가입이 어려울 수
@@ -418,8 +445,11 @@
                                                             </div>
                                                         </li>
                                                         <li>
-                                                            <h1 class="terms-sub-title">개인정보 수집 및 이용 (선택)</h1>
-                                                            <div class="terms-section-box">
+                                                            <h1 class="terms-sub-title">개인정보 수집 및 이용 (선택)
+                                                                <span class="modal-terms-button pc-hidden">전문보기</span>
+                                                                <span class="close pc-hidden">닫기  </span>
+                                                            </h1>
+                                                            <div class="terms-section-infobox">
                                                                 <p>
                                                                     ipsum dolor sit amet consectetur, adipisicing elit.
                                                                     Dignissimos, quibusdam dolore magni voluptas ullam
@@ -441,11 +471,17 @@
                                                                 </p>
                                                             </div>
                                                             <div class="terms-section-checkbox">
-                                                                <input type="radio" name="agree04" class=""
-                                                                    value="agree04"><span>개인정보 수집 및 보유, 이용기간에
-                                                                    동의합니다.</span>
-                                                                <input type="radio" name="agree04" class=""
-                                                                    value="disagree04" checked><span>동의하지 않습니다.</span>
+                                                                <div class="agree-radio-box">
+                                                                    <input type="radio" name="agree04" class=""
+                                                                        value="agree04"><span
+                                                                        class="agree-radio-text">개인정보 수집 및 보유, 이용기간에
+                                                                        동의합니다.</span>
+                                                                </div>
+                                                                <div class="agree-radio-box">
+                                                                    <input type="radio" name="agree04" class=""
+                                                                        value="disagree04" checked><span
+                                                                        class="agree-radio-text">동의하지 않습니다.</span>
+                                                                </div>
                                                             </div>
                                                             <div class="terms-section-info">
                                                                 <p>선택 개인정보 수집에 대해 동의를 거부하실 수 있으며, 거부하여도 회원가입 및 서비스 이용이
@@ -461,7 +497,6 @@
                             </div>
                             <!-- 회원가입 버튼 -->
                             <div class="forms submitBtn">
-                                <div class="form-title"></div>
                                 <div class="joinBtns">
                                     <a href="#" id="cancleBtn">취소</a>
                                     <input type="button" value="회원가입" id="joinOkBtn">
