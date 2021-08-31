@@ -172,32 +172,32 @@ li.slide_item>a:hover span.more-button{
 .controls span{
     /* background: #aaa; */
     color: #fff;
-    padding:10px 20px;
+    /* padding:10px 20px; */
     margin: 0 10px;
     cursor: pointer;
     /* position: relative; */
+    width: 30px;
+    height: 50px;
 }
 .controls span::after{
     content:"";
-    /* position: absolute;
-    left:0px; */
     width: 50px;
     height: 50px;
     background: #fff;
     border-radius: 50px;
     margin-top: -20px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-    z-index: 2;
 }
 span.prev{
-    background-image: url(../../img/arrow-left.png);
+    background: url(../../img/arrow-left.png)no-repeat 50% /cover;
     filter: drop-shadow(0px 0px 5px rgb(145, 145, 145));
     display:block;
-    border: 0px solid #da1009;
+    z-index: 200;
 }
 span.next{
-    background-image: url(../../img/arrow-right.png);
+    background: url(../../img/arrow-right.png)no-repeat 50% /cover;
     filter: drop-shadow(0px 0px 5px rgb(145, 145, 145));
+    z-index: 200;
     /* border-left: 1px solid#aaa; */
 }
 
