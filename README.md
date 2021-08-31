@@ -40,9 +40,10 @@ https://leeminhy.site
   <br>
 4. brand.html https://leeminhy.site/subpage/brand.html<br>
   <img src="https://user-images.githubusercontent.com/80026422/131342080-c623d857-7e9c-493d-ae60-45ae9ae791c4.png">
-  - JavaScript를 이용한 유효성 검사 <br>
-  -  <br>
+  - jQuery 사용 <br>
+  - sub GNB mouseover 시 제품 이미지 출력<br>
   <br>
 5. brand_products.html https://leeminhy.site/subpage/brand_products.html<br>
   <img src="https://user-images.githubusercontent.com/80026422/131342122-4a9b7bc8-bad8-49b4-9034-b3ab668c6acb.png">
-  - JavaScript를 이용한 유효성 검사 <br>
+  - jQuery 사용 <br>
+  - append를 사용하여 카테고리별 제품 
