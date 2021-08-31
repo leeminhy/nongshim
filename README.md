@@ -23,7 +23,7 @@ https://leeminhy.site
 
 <strong>공통 사항: 반응형 웹구현 및 웹표준, 웹접근성, 크로스브라우징</strong>
 
-1. index.html  <br>
+1. index.html  https://leeminhy.site/index.html<br>
   <img src="https://user-images.githubusercontent.com/80026422/131341913-c018cfdd-5207-4835-ae98-8a10be4efa18.png">
   - 3개의 슬라이드 스타일 구성 : JavaScript를 사용해 clientWidth값으로 이동/infinite loop/drag&drop 구현 <br>
   - 반응형 구현 : header, container footer의 tablet, mobile 화면  <br>
