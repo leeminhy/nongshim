@@ -85,10 +85,10 @@
     position: absolute;
     bottom: 0%;
     right: 0px;
-    transform: translate(0%,-50%);
+    transform: translate(20%,-50%);
     background: #f00a;
-    width:150px;
-    height:40px;
+    width:90px;
+    height:55px;
     opacity: 0.9;
 }
 .container .inner-container .index .sections .section.sec3 .sec-con .info-boxes{
