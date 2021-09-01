@@ -1,4 +1,4 @@
-# portfolio_nongshim
+# portfolio
 <br>
 
 <strong>벤치마킹 사이트로 농심을 선정하여 클론코딩</strong>
