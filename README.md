@@ -1,14 +1,17 @@
 # portfolio
 <br>
-
-<strong>벤치마킹 사이트로 농심을 선정하여 클론코딩</strong>
-<br>
-구현 사이트<br>
+<strong>구현 사이트</strong><br>
 https://leeminhy.site
- <br>
- <br>
+ <br> <br>
+벤치마킹 사이트로 농심 브랜드 사이트를 선정하여 클론코딩하였습니다<br>
+<br>
+<strong>작업기간:2021.08.02~08.26</strong><br>
+<strong>본인참여율:100%</strong><br>
+<strong>W3C 마크업 검증 서비스, 웹표준성 검사</strong><br>
+
 ## 기술 언어
-<strong>HTML5, CSS3, JavaScript, jQuery</strong>
+<strong>HTML5, CSS3, JavaScript, jQuery</strong><br>
+
 HTML5
 - 시맨틱 마크업 이해
 
