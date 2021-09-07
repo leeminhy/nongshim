@@ -21,7 +21,9 @@
 /* max-width:767px */
 @import url(main_resposive.css) only screen and (max-width:991px);
 
-
+.container{
+    overflow-x: hidden;
+}
 
 #wrap{
     width:100%;
